@@ -1,0 +1,180 @@
+{% extends 'main_sub.html' %}
+
+{% block js_head %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/fabric.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/send.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/fonts.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}colorpicker/js/colorpicker.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="{{ MEDIA_URL }}js/excanvas.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block title %}Поздравь!{% endblock %}
+{% block css_head %}
+<link rel="stylesheet" media="screen" type="text/css" href="{{ MEDIA_URL }}colorpicker/css/colorpicker.css"/>
+{% endblock %}
+
+{% block sub %}
+
+<div class="send-card">
+    <div class="send-card__preview"></div>
+    <div class="send-card__right-panel">
+        <h4>Заголовок открытки</h4>
+        <div>
+            <input id="title" type="text" value="Заголовок" onkeyup="CardEditor.set('title', {text: this.value})" style="float: left; width: 155px;">
+            <div id="title-colorpicker" class="card__colorpicker" style="float: left;">&nbsp;</div>
+            <br style="clear: both;">
+        </div>
+        <select id="title-font" onchange="CardEditor.set('title', {fontFamily: this.options[this.selectedIndex].value});">
+            <option value="Quake_Cyr">Quake</option>
+            <option value="OdessaScript_500">Odessa</option>
+            <option value="Times_New_Roman">Times New Roman</option>
+            <option value="Terminator_Cyr">Terminator</option>
+        </select>
+        <h4>Ваш поздравительный текст</h4>
+        <ul class="fonts-options">
+            <!--<li onclick="CardEditor.set('text', {fontWeight: 1000})"><b>Ж</b></li>-->
+            <li onclick="CardEditor.toggleItalic()"><i>К</i></li>
+            <li onclick="CardEditor.toggleUnderline()"><u>П</u></li>
+        </ul>
+        <select id="text-font" onchange="CardEditor.set('text', {fontFamily: this.options[this.selectedIndex].value});" style="width:100px;">
+            <option value="Quake_Cyr">Quake</option>
+            <option value="OdessaScript_500">Odessa</option>
+            <option value="Times_New_Roman">Times New Roman</option>
+            <option value="Terminator_Cyr">Terminator</option>
+        </select>
+        <span id="text-colorpicker" class="card__colorpicker">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <textarea rows="10" cols="10" onkeyup="CardEditor.set('text', {text: this.value})">Текст</textarea>
+        <!--<h4>Добавить музыку</h4>
+        <div class="b-player">
+            <select>
+                <option value="1">Music 1</option>
+                <option value="1">Music 1</option>
+                <option value="1">Music 1</option>
+                <option value="1">Music 1</option>
+                <option value="1">Music 1</option>
+                <option value="1">Music 1</option>
+            </select>
+            <b class="b-player__play"></b>
+            <b class="b-player__stop"></b>
+        </div>-->
+    </div>
+    <div class="send-card__bottom-panel">
+        <ul class="tabs__labels">
+            <li class="active"><span>Фон открытки</span></li>
+            <li><span>Рамка</span></li>
+            <li><span>Декоративные элементы</span></li>
+        </ul>
+        <div class="tabs__content-wrap">
+            <div class="tabs__content active">
+                <ul>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/white.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/01.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/02.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/03.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/04.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/05.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/06.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/07.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/08.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/09.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/10.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/11.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/12.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/13.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/14.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}layouts/15.png" width="130" height="100" alt="" onclick="CardEditor.loadBackground(this.src);" /></li>
+                </ul>
+            </div>
+            <div class="tabs__content">
+                <ul>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/01.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/02.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/03.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/04.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/05.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/06.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/07.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}frames/08.png" width="130" height="100" alt="" onclick="CardEditor.loadFrame(this.src);" /></li>
+                </ul>
+            </div>
+            <div class="tabs__content">
+                <ul>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/1.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/2.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/3.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/4.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/5.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/6.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/7.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/8.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/9.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/11.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/12.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/13.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/14.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/15.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/16.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/17.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/18.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/19.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/20.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/21.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/22.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/23.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/24.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/25.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/26.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/27.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/28.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/29.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/30.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/31.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/32.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/33.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/34.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                    <li><img srctoload="{{ MEDIA_URL }}objects/35.png" width="130" height="100" alt="" onclick="CardEditor.loadDecorator(this.src);" /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="javascript:;" onclick="save()" class="button button_next" id="next_button">Следующий шаг</a>
+
+<canvas id="i" width="455" height="350"></canvas>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    Preloader.value('Загрузка');
+    Preloader.show();
+
+    setTimeout(function() {
+        var imgs = [];
+
+        $('img[srctoload*="/media/"]').each(function() {
+            imgs.push($(this).attr('srctoload'));
+        });
+
+
+
+        preload(imgs, function(loader) {
+            for(var i = 0; i < imgs.length; i++) {
+                $('img[srctoload="'+imgs[i]+'"]').attr('src', imgs[i]);
+            }
+
+            Preloader.hide();
+            load();
+        }, function(loader) {
+            var percent = Math.ceil(loader.loaded / loader.triggerValue * 100);
+
+            Preloader.value(percent + '%');
+            Preloader.range(percent);
+        });
+    }, 500);
+})
+</script>
+{% endblock %}

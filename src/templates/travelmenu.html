@@ -1,0 +1,30 @@
+{% extends 'main_sub.html' %}
+
+{% block title %}Travelmenu{% endblock %}
+
+{% block js_head %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.jscrollpane.min.js"></script>
+{% endblock %}
+
+
+{% block head %}
+<script type="text/javascript">
+    jQuery(function() {
+        jQuery('.txt-content').jScrollPane({showArrows: true, verticalGutter: 20});
+    });
+</script>
+{% endblock %}
+
+{% block sub %}
+<div class="txt-content">
+    <p>
+        <b>Travelmenu</b> – это первый в России он-лайн туристический сервис, предоставляющий не только услуги бронирования и покупки туров, отелей и билетов, но и лучшие по рынку цены на путешествия в более чем 190 страны мира от 70 лидирующих туроператоров, проживание в 250,000 отелей и билеты от 500 авиакомпаний.
+    </p>
+    <p>
+        Наша цель - принести будущее в каждый дом. Теперь вы можете не выходя из дома организовать поездку вашей мечты!
+    </p>
+
+    <a href="http://www.facebook.com/travelmenu?sk=info" target="_blank">TravelMenu</a>
+</div>
+{% endblock %}

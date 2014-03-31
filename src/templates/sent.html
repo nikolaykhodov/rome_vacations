@@ -1,0 +1,17 @@
+{% extends 'main_sub.html' %}
+
+{% block title %}Отправь открытку{% endblock %}
+
+{% block sub %}
+<table cellspacing="0" cellpadding="0" style="width: 100%; height: 100%">
+    <tr>
+        <td valign="middle" align="center">
+            <div style="font-size: 20px; margin-bottom: 20px;">Ваша открытка отправлена</div>
+            <a href="../send/" class="button button_orange">Отправить новую</a>
+            <br/>
+            <a id="goto" href="{{ next }}" class="button button_orange" target="_top">Посмотреть результат</a>
+        </td>
+    </tr>
+
+</table>
+{% endblock %}

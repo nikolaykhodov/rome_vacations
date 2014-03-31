@@ -1,0 +1,92 @@
+{% extends 'main_sub.html' %}
+
+{% block title %}Призы{% endblock %}
+
+{% block js_head %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.jscrollpane.min.js"></script>
+{% endblock %}
+
+
+{% block head %}
+<script type="text/javascript">
+    jQuery(function() {
+        jQuery('.txt-content').jScrollPane({showArrows: true, verticalGutter: 20});
+    });
+</script>
+{% endblock %}
+
+{% block sub %}
+        <div class="txt-content">
+            <ul class="list-with-images">
+                <li>
+                    <a href="http://www.samsung.com/ru/consumer/cameras-camcorders/compact-camera/2-view/EC-MV800ZBPBRU/index.idx?pagetype=prd_detail&returnurl=&pid=ru_compactcameratype_keyvisual1_mv800_20110901" target="_blank"><img src="{{ MEDIA_URL }}img/prize_rome.jpg" alt="samsung" width="170" height="115" /></a>
+                    <a href="http://www.samsung.com/ru/consumer/cameras-camcorders/compact-camera/2-view/EC-MV800ZBPBRU/index.idx?pagetype=prd_detail&returnurl=&pid=ru_compactcameratype_keyvisual1_mv800_20110901" target="_blank"><h2>Неделя отдыха в Риме и фотокамера Samsung MV800</h2></a>
+                    <h4>Приз за 1 место</h4>
+                    <p>
+                        Мечтаете делать выдающиеся фотоснимки? В таком случае ищите неожиданный ракурс!
+                        Представляем Samsung MV800 с поворотным дисплеем. С помощью этой камеры Вы сможете
+                        запечатлеть привычные вещи под новым ракурсом. Широкая функциональность камеры MV800
+                        позволяет компоновать кадр под разными ракурсами и в максимальной степени использовать
+                        художественные эффекты. Выберите вид сверху или снизу — это привнесет в сюжет динамику,
+                        которой нельзя достичь при обычном ракурсе. Затем, используя выдвижной дисплей как опору для
+                        фиксации камеры, продемонстрируйте окружающим отснятый материал. Жизнь становится более
+                        интересной, когда Вы можете наблюдать ее с разных сторон!
+                    </p>
+                    <p>
+                        Всю поездку вы можете посвятить знакомству с итальянской столицей. Романтическая поездка,
+                        или активная познавательная, идеальный шоппинг или новые знакомства - решать Вам. Римские
+                        каникулы, придуманные Вами, поможет воплотить в жизнь компания Тravelmenu. Запечатлейте
+                        поездку на фотокамеру Samsung MV800, и поделитесь увиденным со своими родственниками и
+                        друзьями!
+                    </p>
+                </li>
+                <li>
+                    <a href="http://www.samsung.com/ru/consumer/computers-peripherals/notebooks/ultra-portable/NP900X3A-B06RU/index.idx?pagetype=prd_detail&pid=ru_notebookstype_keyvisual1_9series_20111213" target="_blank"><img src="{{ MEDIA_URL }}img/prize_ultra.png" alt="samsung" width="170" height="115"/></a>
+                    <a href="http://www.samsung.com/ru/consumer/computers-peripherals/notebooks/ultra-portable/NP900X3A-B06RU/index.idx?pagetype=prd_detail&pid=ru_notebookstype_keyvisual1_9series_20111213"  target="_blank"><h2>Samsung 9 Series Limited Edition</h2></a>
+                    <h4>Приз за 2 место</h4>
+                    <p>
+                        Обретите свой собственный стиль с ноутбуком Samsung Limited Edition 9 серии, имя которому
+                        — само изящество. Представленный в нескольких элегантных цветах, украшенный россыпью
+                        уложенных вручную сияющих кристаллов, это необычайно тонкий и лёгкий ноутбук — первая
+                        модель в корпусе из прочнейшего сплава дюралюминия. Его экран SuperBright Plus, который в
+                        два раза ярче экранов обычных 13'' ноутбуков, подарит вам максимум удовольствия от фильмов
+                        и фотографий, подсвеченная клавиатура сделает работу как никогда лёгкой — даже в темноте, а
+                        высочайшая производительность, эффективность и автономность стоят того, чтобы познакомиться
+                        с ноутбуком Samsung Limited Edition 9 серии ближе.
+                    </p>
+                </li>
+                <li>
+                    <a href="http://www.samsung.com/ru/consumer/cameras-camcorders/compact-camera/2-view/EC-MV800ZBPBRU/index.idx?pagetype=prd_detail&returnurl=&pid=ru_compactcameratype_keyvisual1_mv800_20110901" target="_blank"><img src="{{ MEDIA_URL }}img/prize_mv800.jpg" alt="samsung" width="170" height="115"/></a>
+                    <a href="http://www.samsung.com/ru/consumer/cameras-camcorders/compact-camera/2-view/EC-MV800ZBPBRU/index.idx?pagetype=prd_detail&returnurl=&pid=ru_compactcameratype_keyvisual1_mv800_20110901" target="_blank"><h2>Фотокамеры Samsung MV800</h2></a>
+                    <h4>Приз за 3-4 места</h4>
+                    <p>
+                        Мечтаете делать выдающиеся фотоснимки? В таком случае ищите неожиданный ракурс!
+                        Представляем Samsung MV800 с поворотным дисплеем. С помощью этой камеры Вы сможете
+                        запечатлеть привычные вещи под новым ракурсом. Широкая функциональность камеры MV800
+                        позволяет компоновать кадр под разными ракурсами и в максимальной степени использовать
+                        художественные эффекты. Выберите вид сверху или снизу — это привнесет в сюжет динамику,
+                        которой нельзя достичь при обычном ракурсе. Затем, используя выдвижной дисплей как опору для
+                        фиксации камеры, продемонстрируйте окружающим отснятый материал. Жизнь становится более
+                        интересной, когда Вы можете наблюдать ее с разных сторон!
+                    </p>                </li>
+                <li>
+                    <a href="http://www.samsung.com/ru/consumer/cameras-camcorders/photo-frame/photo-frame/LP08WSLSB/EN/index.idx?pagetype=prd_detail&returnurl=" target="_blank"><img src="{{ MEDIA_URL }}img/prize_frames.jpg" alt="samsung" width="170" height="115"/></a>
+                    <a href="http://www.samsung.com/ru/consumer/cameras-camcorders/photo-frame/photo-frame/LP08WSLSB/EN/index.idx?pagetype=prd_detail&returnurl=" target="_blank"><h2>Электронные фоторамки Samsung</h2></a>
+                    <h4>Приз за 5-9 места</h4>
+                    <p>
+                        Цифровая фоторамка 8" c разрешением 800x600. Возможность воспроизведения различного
+                        мультимедийного контента:Фотографии, Музыка, Видеоролики. Встроенная память 1Гб, картридер,
+                        стерео спикеры. Пульт дистанционного управления.
+
+                        Дизайн этой цифровой фоторамки создавался с использованием самых современных материалов и
+                        технологий. Изящный корпус, словно выточен из горного хрусталя и наполнен тонкой игрой света.
+                        Сенсорные кнопки управления не видны в неактивном состоянии, но стоит только прикоснуться
+                        к одной из граней, как они начнут светиться мягким лунным светом. Фоторамка доступна в двух
+                        цветовых исполнениях: Черном и Белом.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+{% endblock %}

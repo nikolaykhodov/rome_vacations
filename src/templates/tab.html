@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block layout %}
+
+{% if liked %}
+    <script type="text/javascript">
+        setTimeout(function() {
+            top.location.href="http://apps.facebook.com/rome_vacations{{ DEBUG_POSTFIX }}/";
+        }, 6000);
+    </script>
+    <a href="http://apps.facebook.com/rome_vacations{{ DEBUG_POSTFIX }}/" target="_top">
+        <img src="{{ MEDIA_URL }}img/tobeliked.jpg" width="520" />
+    </a>
+{% else %}
+    <img src="{{ MEDIA_URL }}img/tobeliked.jpg" width="520" />
+{% endif %}
+
+{% endblock %}

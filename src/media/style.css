@@ -1,0 +1,758 @@
+@font-face {
+    font-family: 'ArialNarrow';
+    src: url('fonts/arialn-webfont.eot');
+    src: url('fonts/arialn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/arialn-webfont.woff') format('woff'),
+         url('fonts/arialn-webfont.ttf') format('truetype'),
+         url('fonts/arialn-webfont.svg#ArialNarrow') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html{
+	margin:0;
+	padding: 0;
+}
+body{
+	font: normal 11px Arial;
+	margin:0;
+	padding: 0;
+}
+*:focus{
+	outline: none;
+}
+h1{
+	color: #ffffff;
+	font:normal 43px/50px "Arial Narrow", ArialNarrow, Arial;
+	margin: 0;
+}
+p{
+	margin: 0 0 18px;
+}
+
+a img{
+	border: 0;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.wrap{
+	background-color: #07052d;
+	background-image: url("img/bg.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+	margin: 15px auto;
+	padding: 15px;
+	position: relative;
+	width: 730px;
+}
+.wrap.main{
+	background-image: url("img/bg-main.jpg");
+}
+.header{
+	height: 65px;
+}
+	.header .button{
+		position: absolute;
+		right: 15px;
+		top: 20px;
+	}
+.content{
+	background: #ffffff;
+	border-radius: 8px;
+	color: #070630;
+	font-size: 12px;
+	height: 552px;
+	line-height: 18px;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+}
+.wrap.main .content,
+.wrap.preloader .content{
+	background: none;
+}
+
+.footer{
+	height: 63px;
+}
+.footer__logo{
+	margin: 12px 0;
+}
+/* Main Page */
+.b-mainmenu{
+	font-family: "Arial Narrow", ArialNarrow, Arial;
+	margin: 30px 0 0 90px;
+}
+.b-mainmenu li{
+	margin: 0 0 50px;
+}
+.button{
+	background: #4672b4 url("img/sprite.png") no-repeat 0 0;
+	border-radius: 7px;
+	box-shadow: 0 0 8px #a0b7d2;
+	color: #ffffff;
+	display: block;
+	height: 37px;
+	font-size: 19px;
+	line-height: 37px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px #00389b;
+	width: 200px;
+}
+.button:hover{
+	background-position: 0 -37px;
+}
+.button_orange{
+	background-position: 0 -74px;
+}
+.button_orange:hover{
+	background-position: 0 -111px;
+}
+/* Gallery */
+.gallery{
+	background: #bbdeff url(img/gallery_bg.jpg) repeat-x 10px 50%;
+	border: 1px solid #ffffff;
+	border-radius: 7px;
+	box-shadow: 0 0 6px rgba(0,0,0,0.5);
+	height: 510px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	width: 575px;
+}
+.gallery__prev,
+.gallery__next{
+	background: url("img/sprite.png") no-repeat -44px -148px;
+	display: block;
+	height: 37px;
+	margin-top: -19px;
+	position: absolute;
+	overflow: hidden;
+	top:50%;
+	width: 37px;
+}
+.gallery__prev{
+	left: 10px;
+}
+.gallery__next{
+	background-position: -81px -148px;
+	right: 10px;
+}
+.gallery__image-list{
+	margin: 0 -15px;
+	overflow: hidden;
+}
+.gallery__image-list li{
+	display: block;
+	float: left;
+	height: 167px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 200px;
+}
+.gallery__image-list li a{
+	color: #090631;
+	text-decoration: none;
+}
+.gallery__image-list li a:hover{
+	color: #0874c7;
+}
+.gallery__image-list li img{
+	border: 3px solid #ffffff;
+	box-shadow: 0 2px 10px rgba(0,100,100,0.5);
+}
+.gallery__image-list li a:hover img{
+	border-color: #ffa647;
+}
+.gallery__image-list li span{
+	text-decoration: none;
+}
+.gallery__pagination{
+	display: inline-block;
+	font-size: 12px;
+	height: 20px;
+	margin: 0 auto;
+}
+.gallery__pagination li{
+	display: block;
+	float: left;
+	margin: 0 3px 0 0;
+}
+.gallery__pagination li a{
+	color: #080530;
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+	width: 20px;
+}
+.gallery__pagination li a.active{
+	background: #2867ce;
+	border-radius: 10px;
+	color: #ffffff;
+}
+.gallery__popup{
+	background: #ffffff;
+	border-radius: 8px;
+	color:#0b0531;
+	left: 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 10;
+        display: none;
+}
+.gallery__popup .image_big{
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	display: block;
+	margin: 55px auto 25px;
+}
+.gallery__popup__close{
+	background: url("img/sprite.png") no-repeat -167px -148px;
+	height: 19px;
+	position: absolute;
+	top:10px;
+	right: 20px;
+	width: 19px;
+}
+.overflow{
+	background: rgba(0,0,0,0.3);
+	border-radius: 10px;
+	left:0px;
+	height: 100%;
+	position: absolute;
+	top:0px;
+	width: 100%;
+	z-index: 5;
+        display: none;
+}
+
+/* txt-content */
+.txt-content{
+	height: 552px;
+	padding: 0 20px 0 0;
+	width: 670px;
+}
+
+.list-with-images{
+	margin: 0;
+	padding: 0;
+}
+.list-with-images li{
+	margin: 0 0 50px;
+	padding: 15px 0 0 175px;
+	position: relative;
+}
+.list-with-images li img{
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+.list-with-images li h2{
+	color: #ca266f;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0;
+}
+.list-with-images li h4{
+	color: #515070;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.two-column{
+
+}
+.two-column .two-column__column{
+	background: #c8e3fe;
+	border-radius: 5px;
+	float: left;
+	height: 462px;
+	padding: 15px 20px;
+	width: 295px;
+}
+.two-column .two-column__column + .two-column__column{
+	margin-left: 20px;
+}
+.two-column .two-column__column h2{
+	font-size: 25px;
+	font-weight: normal;
+	font-family: "Arial Narrow", ArialNarrow, Arial;
+	line-height: 25px;
+	margin: 0 0 10px;
+}
+.userlist-wrap{
+	height: 385px;
+	margin: 15px 0 0;
+	overflow: auto;
+}
+.userlist-wrap ul{
+
+}
+.userlist-wrap li{
+	line-height: 75px;
+	margin: 0 0 15px;
+}
+.userlist-wrap li *{
+	margin: 0 15px 0 0;
+	vertical-align: middle;
+}
+.userlist-wrap li input{
+	margin: 0 15px;
+}
+.userlist-wrap li img{
+
+}
+.button_prev,
+.button_next{
+	bottom: 20px;
+	position: absolute;
+}
+.button_prev{
+	left: 25px;
+}
+.button_next{
+	right: 25px;
+}
+.button_small{
+	background: #1437d9;
+	border-radius: 5px;
+	color: #ffffff;
+	font: normal 16px/16px "Arial Narrow", ArialNarrow, Arial;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-shadow: 0 1px #00389b;
+}
+.send-card{
+
+}
+
+.send-card__preview{
+	background:#eeeeee url('img/logo_big.png') no-repeat 50% 50%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	float: left;
+	height: 350px;
+	margin: 0 0 25px;
+	width: 455px;
+}
+.send-card__right-panel{
+	background: #c8e3fe;
+	border-radius: 5px;
+	float: right;
+	height: 472px;
+	padding: 10px;
+	width: 190px;
+}
+.send-card__right-panel h4{
+	color: #080532;
+	font: normal 16px/16px "Arial Narrow", ArialNarrow, Arial;
+	margin: 30px 0 10px;
+}
+.send-card__right-panel h4:first-child{
+	margin: 0 0 10px;
+}
+.send-card__right-panel input,
+.send-card__right-panel select,
+.send-card__right-panel textarea{
+	border: 1px solid #e2e2ea;
+	border-top-color: #acadb2;
+	display: block;
+	height: 22px;
+	margin: 7px 0;
+	width: 190px;
+}
+.send-card__right-panel input{
+	height: 20px;
+}
+.send-card__right-panel textarea{
+	height: 135px;
+	resize: none;
+}
+.send-card__right-panel .fonts-options{
+	display: inline-block;
+}
+.send-card__right-panel .fonts-options li{
+	cursor: pointer;
+	display: inline-block;
+	font: normal 16px Trebuchet;
+	height: 22px;
+	vertical-align: middle;
+	width: 20px;
+}
+.send-card__right-panel .fonts-options + select{
+	display: inline-block;
+	width: 120px;
+}
+.b-player{
+
+}
+.b-player select{
+	display: inline-block;
+	margin: 0;
+	width: 150px;
+}
+.b-player__play{
+	border-color: transparent transparent transparent #266acd;
+	border-style: solid;
+	border-width: 5px 0 5px 10px;
+	cursor: pointer;
+	display: inline-block;
+	height: 0;
+	margin: 0 5px;
+	width: 0;
+}
+.b-player__stop{
+	background: #266acd;
+	display: inline-block;
+	cursor: pointer;
+	height: 10px;
+	width: 10px;
+}
+.send-card__bottom-panel{
+	float: left;
+	height: 180px;
+	width: 455px;
+}
+.tabs__labels{
+	overflow: hidden;
+}
+.tabs__labels li{
+	float: left;
+	margin: 0 1px 0 0;
+}
+.tabs__labels li span{
+	background: #d9ebff;
+	border-radius: 5px 5px 0 0;
+	cursor: pointer;
+	display: block;
+	font: normal 16px/13px "Arial Narrow", ArialNarrow, Arial;
+	height: 13px;
+	padding: 10px 15px;
+}
+.tabs__labels li.active span{
+	background-color: #C8E3FE;
+}
+.tabs__content-wrap{
+	background: #C8E3FE;
+	border-radius: 0 5px 5px 5px;
+	height: 130px;
+	overflow: hidden;
+	padding: 10px 15px 5px;
+	position: relative;
+	white-space: nowrap;
+	width: 425px;
+}
+.tabs__content{
+	height: 130px;
+	left: 15px;
+	overflow: auto;
+	position: absolute;
+	visibility: hidden;
+	top: 10px;
+	width: 425px;
+}
+.tabs__content.active{
+	visibility: visible;
+}
+.tabs__content ul{
+	display: block;
+	float: left;
+
+}
+.tabs__content ul li{
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin: 2px 11px 0 0;
+}
+.tabs__content ul li img{
+	border: 2px solid #ffffff;
+	display: block;
+}
+.tabs__content ul li img:hover{
+	border:4px solid #79b9ff;
+	margin: -2px;
+}
+
+
+.wrap.preloader{
+	background: url(img/bg-preloader.jpg) no-repeat 0 0;
+        z-index: 100;
+}
+.wrap.preloader .header{
+	height: 50px;
+	text-align: center;
+}
+.wrap.preloader .content{
+	height: 570px;
+	padding: 10px 20px 30px;
+}
+.introduce{
+	color: #ffffff;
+	font-weight: bold;
+	margin-bottom: 45px;
+	text-align: center;
+}
+.preloader__box{
+	background: rgba(7,4,45,0.9);
+	border-radius: 8px;
+	height: 320px;
+	margin: auto;
+	overflow: hidden;
+	width: 616px;
+}
+.preloader__value{
+	color: #ffffff;
+	font-size: 80px;
+	line-height: 60px;
+	height: 60px;
+	margin: 85px auto 30px;
+	text-align: center;
+}
+.preloader__line{
+	background: #ffffff;
+	border: 3px solid #2c356a;
+	height: 30px;
+	margin: auto;
+	overflow: hidden;
+	width: 530px;
+}
+.preloader__range{
+	background: #4db6ff url(img/preloader_bg.gif) repeat-x 0 0;
+	height: 30px;
+}
+
+.link-to-note{
+	bottom: 0;
+	position: absolute;
+	right: 0;
+}
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	background: red;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	height: 492px;
+	width: 2px;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: red;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack{
+	background: #d7d7df;
+	border-right: 1px solid #989aa6;
+	position: relative;
+}
+.jspHorizontalBar .jspTrack{
+	border-right: 0;
+	border-bottom: 1px solid #989aa6;
+	height: 1px;
+}
+
+.jspDrag
+{
+	background: #2869d1;
+	border-radius: 7px;
+	position: relative;
+	top: 0;
+	left: -6px;
+	cursor: pointer;
+	width: 13px;
+}
+.jspDrag:after,
+.jspDrag.jspHover:after{
+	background: url("img/sprite.png") no-repeat -30px -148px;
+	content: "";
+	display: block;
+	height: 19px;
+	left: 3px;
+	margin: -10px 0 0;
+	position: absolute;
+	top: 50%;
+	width: 7px;
+}
+.jspDrag.jspHover:after{
+	background-position: -37px -148px;
+}
+.jspDrag.jspHover{
+	background-color: #6c9deb;
+}
+.jspHorizontalBar .jspDrag{
+	height: 13px;
+	left: 0;
+	top:-6px;
+}
+.jspHorizontalBar .jspDrag:after,
+.jspHorizontalBar .jspDrag.jspHover:after{
+	background-position: -118px -148px;
+	height: 7px;
+	left: 50%;
+	margin: 0 0 0 -10px;
+	top: 4px;
+	width: 19px;
+}
+.jspHorizontalBar .jspDrag.jspHover:after{
+	background-position: -118px -155px;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+}
+
+.jspVerticalBar .jspArrow,
+.jspHorizontalBar .jspArrow{
+	background: url("img/sprite.png") no-repeat;
+	height: 15px;
+	position: relative;
+	width: 15px
+}
+.jspVerticalBar .jspArrow{
+	left: -7px;
+}
+.jspHorizontalBar .jspArrow{
+	top: -7px;
+}
+.jspVerticalBar .jspArrowUp{
+	background-position: -15px -148px;
+}
+.jspVerticalBar .jspArrowDown{
+	background-position: 0 -148px;
+}
+.jspVerticalBar .jspArrowUp.jspDisabled{
+	background-position: -15px -163px;
+}
+.jspVerticalBar .jspArrowDown.jspDisabled{
+	background-position: 0 -163px;
+}
+.jspHorizontalBar .jspArrowLeft{
+	background-position: -137px -148px;
+}
+.jspHorizontalBar .jspArrowLeft.jspDisabled{
+	background-position: -152px -148px;
+}
+.jspHorizontalBar .jspArrowRight{
+	background-position: -137px -163px;
+}
+.jspHorizontalBar .jspArrowRight.jspDisabled{
+	background-position: -152px -163px;
+}
+.jspHorizontalBar .jspArrow
+{
+	float: left;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+
+
+
+#title-colorpicker {
+    background-color: #000000; 
+    width: 20px; 
+    height: 22px; 
+    margin: 7px 0px 0px 4px; 
+    cursor: pointer;
+    min-height: 22px;
+    float: left;
+}
+
+#text-colorpicker {
+    background-color: #000000;  
+    height: 20px; 
+    cursor: pointer;
+    min-height: 20px;    
+    margin: 7px 0px 9px 0px;
+}
+
+a.facebook_name {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+ul.list-with-images a {
+    text-decoration: none;
+}

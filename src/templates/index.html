@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block layout %}
+
+<div class="wrap main">
+    <div class="header">
+        <h1>Поздравь друзей - выигрывай призы!</h1>
+    </div>
+    <div class="content">
+        <ul class="b-mainmenu">
+            <li><a href="send/" class="button button_orange">Поздравь!</a></li>
+            <li><a href="gallery/" class="button">Галерея поздравлений</a></li>
+            <li><a href="prizes/" class="button">Призы</a></li>
+            <li><a href="rules/" class="button">Условия конкурса</a></li>
+            <li><a href="travelmenu/" class="button">Travelmenu</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <a href="http://www.facebook.com/samsungru" target="_blank"><img src="{{ MEDIA_URL }}img/samsung.png" class="footer__logo"/></a>
+    </div>
+</div>
+{% endblock %}

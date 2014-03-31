@@ -1,0 +1,46 @@
+{% extends 'main_sub.html' %}
+
+{% block js_head %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/choose_friends.js"></script>
+{% endblock %}
+
+{% block title %}Поздравь!{% endblock %}
+
+{% block sub %}
+<div class="two-column">
+    <div class="two-column__column">
+        <h2>Выбрать друга</h2>
+        <form action="#">
+            <input id="filter" type="text" placeholder="начните вводить имя" onkeyup="findFriends();" />
+        </form>
+        <div class="userlist-wrap">
+            <ul id="friends">
+                <!--<li>
+                    <input type="checkbox"/>
+                    <img src="http://dl.dropbox.com/u/817214/userpic.jpg" alt="Евгений Петров" width="75" height="75"/>
+                    <span>Евгений Петров</span>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+    <div class="two-column__column">
+        <h2>Отобранные</h2>
+        <p id="counter">Вы выбрали <span>0</span> друзей для отправки открытки.</p>
+        <div class="userlist-wrap">
+            <ul id="chosen_friends">
+                <!--<li>
+                    <img src="http://dl.dropbox.com/u/817214/userpic.jpg" alt="Евгений Петров"/>
+                    <span>Евгений Петров</span>
+                    <a href="#" class="button_small">Удалить</a>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+<a href="../send/" class="button button_prev">Вернуться к открытке</a>
+<a href="#" class="button button_next" img_url="{{ img_url }}" card_id="{{ card_id }}" posted="{{ posted }}" onclick="post(); return false;">
+    Отправить
+</a>
+{% endblock %}

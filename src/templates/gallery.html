@@ -1,0 +1,40 @@
+{% extends 'main_sub.html' %}
+
+{% block title %}Галерея поздравлений{% endblock %}
+
+{% block js_head %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gallery.js"></script>
+{% endblock %}
+
+{% block sub %}
+<div class="gallery">
+    <div class="gallery__nav">
+        {% if is_paginated %}
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="gallery__prev"></a>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="gallery__next"></a>
+            {% endif %}
+        {% endif %}
+    </div>
+    <ul class="gallery__image-list">
+        {% for card in card_list %}
+        <li>
+            <a href="../cards-{{ card.id }}/" user_id="{{ card.id }}" image_src="{{ card.image.url }}" onclick="return true; return popup_show(this);">
+                <img src="{{ card.thumbnail.url }}" width="164" height="124" alt="" {% if card.user_id == user_id %}class="my"{%endif%}/>
+                <a class="facebook_name" user_id="{{ card.user_id }}" href="http://www.facebook.com/profile.php?id={{ card.user_id }}" target="_blank">&nbsp;</a>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% if is_paginated %}
+    <ul class="gallery__pagination">
+       {% for page in pages %}
+       <li><a href="?page={{ page }}" {% if page == page_obj.number %}class="active"{% endif %}>{{ page }}</a></li>
+       {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}

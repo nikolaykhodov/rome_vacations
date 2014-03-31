@@ -1,0 +1,44 @@
+{% extends 'main_sub.html' %}
+
+{% block title %}Галерея поздравлений{% endblock %}
+
+{% block js_head %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gallery.js"></script>
+{% endblock %}
+
+{% block sub %}
+<div class="gallery">
+    <div class="gallery__nav">
+        {% if is_paginated %}
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="gallery__prev"></a>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="gallery__next"></a>
+            {% endif %}
+        {% endif %}
+    </div>
+    <ul class="gallery__image-list">
+        {% for top in top_list %}
+        <li style="width: 120px; height: 120px;">
+            <a href="https://fbbutton.com/rome_vacations/admin/fb/top/{{ top.id }}/" target="_blank">
+                <img src="{{ top.card.thumbnail.url }}" width="82" height="62"/>
+                <a class="facebook_name" target="_blank">&nbsp;</a>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% if is_paginated %}
+    <ul class="gallery__pagination">
+       {% for page in pages %}
+       <li><a href="?page={{ page }}" {% if page == page_obj.number %}class="active"{% endif %}>{{ page }}</a></li>
+       {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+<script type="text/javascript">
+    $('.header a').hide();
+</script>
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Римские каникулы</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="{{ MEDIA_URL}}js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL}}js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}style.css" />
+
+    {% block js_head %}
+    {% endblock %}
+    {% block css_head %}
+    {% endblock %}
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    {% block layout %}
+    {% endblock %}
+
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        function checkLiked() {
+            if(/\/app\/tab\/$/.test(window.location.href)) {
+                return;
+            }
+
+            // check whether page is liked or not
+            var page_id = 294777871061;
+            FB.api('/fql', {q: 'SELECT uid FROM page_fan WHERE page_id='+page_id+' AND uid=me()'}, function(response) {
+                try{
+                    var id = response.data[0].uid;
+                } catch(e) {
+                    top.location.href = 'http://www.facebook.com/samsungru?sk=app_109661849150534';
+                }
+            });
+        }
+
+       window.fbAsyncInit = function() {
+            FB.init({appId: '224598317615285', cookie: true, status: true, oauth: true});
+            FB.Canvas.setSize({ width: 600, height: 1000 });
+
+            if(typeof loadGalleryNames == 'function') {
+                loadGalleryNames();
+            }
+
+            FB.getLoginStatus(function(response) {
+                checkLiked();
+
+                if(typeof loadFriends == 'function') {
+                    loadFriends();
+                }
+            });
+        };
+
+        (function() {
+            var e = document.createElement('script');
+            e.async = true;
+            e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+        }());
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block layout %}
+<div id="wrap" class="wrap">
+    <div class="header">
+        <h1>{% block title %}{% endblock %}</h1>
+        <a href=".." class="button">Главное меню</a>
+    </div>
+    <div class="content">
+    {% block sub %}
+    {% endblock %}
+    </div>
+    <div class="footer">
+        <a href="http://www.facebook.com/samsungru" target="_blank"><img src="{{ MEDIA_URL }}img/samsung.png" class="footer__logo"/></a>
+    </div>
+    <div id="popup_background" class="overflow"></div>
+</div>
+
+<div id="preloader" class="wrap preloader" style="display: none;">
+    <div class="header">
+        <h1>Отправляй открытки – выигрывай призы!</h1>
+    </div>
+    <div class="content">
+        <div id="preloader">
+            <p class="introduce">Пользователи поздравляют друзей с Новым годом и Рождеством, размещая с помощью приложения открытки у них на стенах. В приложение встроены креативные открытки, в которых пользователь может добавлять текст различного размера и шрифта, изменять фон и некоторые другие простые параметры.</p>
+            <div class="preloader__box">
+                <div class="preloader__value"></div>
+                <div class="preloader__line">
+                    <div class="preloader__range" style="width:0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="http://www.facebook.com/samsungru" target="_blank"><img src="{{ MEDIA_URL }}img/samsung.png" class="footer__logo"/></a>
+        <a href="http://www.samsung.com/ru/consumer/computers-peripherals/notebooks/ultra-portable/NP900X3A-B06RU/index.idx?pagetype=prd_detail&pid=ru_notebookstype_keyvisual1_9series_20111213" class="link-to-note"  target="_blank"><img src="{{ MEDIA_URL }}img/notebook-samsung.png" alt="Ноутбуки Самсунг серии N9"/></a>
+    </div>
+</div>
+{% endblock %}
